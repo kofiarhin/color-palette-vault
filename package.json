@@ -1,0 +1,20 @@
+{
+  "name": "color-palette-vault",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kofiarhin/color-palette-vault.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kofiarhin/color-palette-vault/issues"
+  },
+  "homepage": "https://github.com/kofiarhin/color-palette-vault#readme",
+  "description": ""
+}
