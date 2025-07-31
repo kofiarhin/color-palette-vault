@@ -1,138 +1,115 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import "./app.styles.scss";
 
 const App = () => {
-  const colors = ["#8E3A73", "#4CAF50", "#2196F3", "#FF5722", "#9C27B0"];
+  // 🎨 10 harmonious colors – muted & elegant tones
+  const colors = [
+    "#264653", // deep teal
+    "#2A9D8F", // teal green
+    "#E9C46A", // soft gold
+    "#F4A261", // muted orange
+    "#E76F51", // warm terracotta
+    "#8AB17D", // sage green
+    "#A8DADC", // pale aqua
+    "#457B9D", // slate blue
+    "#B56576", // muted rose
+    "#6D597A", // dusty purple
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % colors.length);
-    }, 3000); // change every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [colors.length]);
 
-  // 🚀 Over-the-top crazy animation variants
-  const crazyVariants = {
-    initial: { opacity: 0, scale: 0, rotate: -180, x: -200, skewX: "20deg" },
+  const textVariants = {
+    initial: { opacity: 0, scale: 0.8, y: 50 },
     animate: {
       opacity: 1,
       scale: 1,
-      rotate: 0,
-      x: 0,
-      skewX: "0deg",
-      transition: {
-        type: "spring",
-        stiffness: 150,
-        damping: 10,
-        mass: 0.8,
-      },
+      y: 0,
+      transition: { type: "spring", stiffness: 120, damping: 12, duration: 1 },
     },
-    exit: { opacity: 0, scale: 0, rotate: 180, x: 200, skewX: "-20deg" },
-  };
-
-  // 🌈 Looping wild effects
-  const loopEffects = {
-    animate: {
-      rotate: [0, 5, -5, 3, -3, 0],
-      scale: [1, 1.05, 0.95, 1.05, 1],
-      textShadow: [
-        "0px 0px 5px rgba(255,255,255,0.5)",
-        "0px 0px 15px rgba(255,255,255,0.8)",
-        "0px 0px 30px rgba(255,255,255,1)",
-        "0px 0px 15px rgba(255,255,255,0.8)",
-        "0px 0px 5px rgba(255,255,255,0.5)",
-      ],
+    exit: {
+      opacity: 0,
+      scale: 0.8,
+      y: -50,
+      transition: { duration: 0.6 },
     },
-    transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-  };
-
-  // 🎉 Extra bounce/flip on hover
-  const hoverCrazy = {
-    scale: [1, 1.2, 0.8, 1.1, 1],
-    rotate: [0, 15, -15, 10, -10, 0],
-    transition: { duration: 1 },
   };
 
   return (
-    <div
+    <motion.div
       id="app"
       style={{
-        backgroundColor: colors[currentIndex],
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "1rem",
+        textAlign: "center",
         transition: "background-color 1s ease",
       }}
+      animate={{ backgroundColor: colors[currentIndex] }}
+      transition={{ duration: 1 }}
     >
-      {/* 🎆 EXPLOSIVE HEADING */}
-      <motion.h1
-        className="heading"
-        key={currentIndex + "-h1"}
-        variants={crazyVariants}
-        initial="initial"
-        animate="animate"
-        whileHover={hoverCrazy}
-        whileTap={{ scale: 0.9, rotate: -5 }}
-        {...loopEffects}
-        style={{ fontSize: "3.5rem", letterSpacing: "2px" }}
-      >
-        🌈 Color Palette Vault 🌟
-      </motion.h1>
-
-      {/* 🎇 BIGGER, BOUNCY SUBTEXT (NOW ALSO "Color Palette Vault") */}
-      <motion.p
-        key={currentIndex + "-p1"}
-        variants={crazyVariants}
-        initial="initial"
-        animate="animate"
-        transition={{ delay: 0.4 }}
-        whileHover={{
-          scale: 1.3,
-          rotate: [0, -10, 10, 0],
-          color: "#FFD700",
-          transition: { duration: 0.6 },
-        }}
-        style={{
-          fontSize: "3rem",
-          fontWeight: "900",
-          margin: "1rem 0",
-          textTransform: "uppercase",
-        }}
-      >
-        ⚡ Color Palette Vault ⚡
-      </motion.p>
-
-      {/* 🎭 INSTAGRAM LINK WITH ANIMATION */}
-      <motion.p
-        key={currentIndex + "-p2"}
-        variants={crazyVariants}
-        initial="initial"
-        animate="animate"
-        transition={{ delay: 0.8 }}
-        whileHover={{
-          scale: 1.2,
-          rotate: [0, 5, -5, 0],
-          transition: { duration: 0.8 },
-        }}
-        style={{ fontSize: "1.5rem", marginTop: "1rem" }}
-      >
-        🚀 Follow on Instagram{" "}
-        <motion.a
-          href="https://www.instagram.com/colorpalettevault/"
-          target="_blank"
-          rel="noreferrer"
-          whileHover={{
-            scale: 1.5,
-            rotate: [0, 8, -8, 0],
-            color: "#FFD700",
-            textShadow: "0px 0px 12px rgba(255, 215, 0, 1)",
-            transition: { duration: 0.6 },
-          }}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentIndex}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={textVariants}
+          style={{ color: "#fff", width: "100%", maxWidth: "900px" }}
         >
-          ✨ Click Here ✨
-        </motion.a>
-      </motion.p>
-    </div>
+          {/* 🎆 SINGLE HEADLINE */}
+          <motion.h1
+            className="heading"
+            style={{
+              fontSize: "clamp(2rem, 5vw, 4rem)", // responsive font scaling
+              letterSpacing: "2px",
+              marginBottom: "1.5rem",
+              fontWeight: "900",
+              textTransform: "uppercase",
+              lineHeight: 1.2,
+            }}
+          >
+            Color Palette Vault
+          </motion.h1>
+
+          {/* 🎭 INSTAGRAM LINK */}
+          <motion.p
+            style={{
+              fontSize: "clamp(1rem, 2.5vw, 1.5rem)",
+              marginTop: "1rem",
+              lineHeight: 1.4,
+            }}
+          >
+            Follow on Instagram{" "}
+            <motion.a
+              href="https://www.instagram.com/colorpalettevault/"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{
+                scale: 1.2,
+                color: "#FFD700",
+                textShadow: "0px 0px 12px rgba(255, 215, 0, 1)",
+                transition: { duration: 0.4 },
+              }}
+              style={{ display: "inline-block", marginLeft: "0.25rem" }}
+            >
+              Click Here
+            </motion.a>
+          </motion.p>
+        </motion.div>
+      </AnimatePresence>
+    </motion.div>
   );
 };
 
