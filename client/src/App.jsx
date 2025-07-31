@@ -1,21 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { colors } from "./data/colors";
 import "./app.styles.scss";
 
 const App = () => {
   // 🎨 10 harmonious colors – muted & elegant tones
-  const colors = [
-    "#FF6B6B", // vibrant coral red
-    "#FFD93D", // bright sunflower yellow
-    "#6BCB77", // fresh lime green
-    "#4D96FF", // vivid sky blue
-    "#9D4EDD", // bold violet
-    "#FF922B", // rich tangerine orange
-    "#F72585", // hot pink
-    "#3A86FF", // electric blue
-    "#06D6A0", // bright aqua green
-    "#FF4D6D", // punchy raspberry
-  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
