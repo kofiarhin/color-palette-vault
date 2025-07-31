@@ -5,16 +5,16 @@ import "./app.styles.scss";
 const App = () => {
   // 🎨 10 harmonious colors – muted & elegant tones
   const colors = [
-    "#264653", // deep teal
-    "#2A9D8F", // teal green
-    "#E9C46A", // soft gold
-    "#F4A261", // muted orange
-    "#E76F51", // warm terracotta
-    "#8AB17D", // sage green
-    "#A8DADC", // pale aqua
-    "#457B9D", // slate blue
-    "#B56576", // muted rose
-    "#6D597A", // dusty purple
+    "#FF6B6B", // vibrant coral red
+    "#FFD93D", // bright sunflower yellow
+    "#6BCB77", // fresh lime green
+    "#4D96FF", // vivid sky blue
+    "#9D4EDD", // bold violet
+    "#FF922B", // rich tangerine orange
+    "#F72585", // hot pink
+    "#3A86FF", // electric blue
+    "#06D6A0", // bright aqua green
+    "#FF4D6D", // punchy raspberry
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
