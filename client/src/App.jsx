@@ -14,36 +14,46 @@ const App = () => {
     return () => clearInterval(interval);
   }, [colors.length]);
 
-  const textVariants = {
-    initial: { opacity: 0, y: 50, scale: 0.8, rotate: -10, skewY: "5deg" },
+  // 🚀 Over-the-top crazy animation variants
+  const crazyVariants = {
+    initial: { opacity: 0, scale: 0, rotate: -180, x: -200, skewX: "20deg" },
     animate: {
       opacity: 1,
-      y: 0,
       scale: 1,
       rotate: 0,
-      skewY: "0deg",
+      x: 0,
+      skewX: "0deg",
       transition: {
-        duration: 1,
         type: "spring",
-        stiffness: 100,
-        damping: 8,
+        stiffness: 150,
+        damping: 10,
+        mass: 0.8,
       },
     },
-    exit: { opacity: 0, y: -50, scale: 0.8, rotate: 10, skewY: "-5deg" },
+    exit: { opacity: 0, scale: 0, rotate: 180, x: 200, skewX: "-20deg" },
   };
 
-  const shimmerEffect = {
+  // 🌈 Looping wild effects
+  const loopEffects = {
     animate: {
+      rotate: [0, 5, -5, 3, -3, 0],
+      scale: [1, 1.05, 0.95, 1.05, 1],
       textShadow: [
-        "0px 0px 4px rgba(255,255,255,0.5)",
-        "0px 0px 12px rgba(255,255,255,0.8)",
-        "0px 0px 20px rgba(255,255,255,1)",
-        "0px 0px 12px rgba(255,255,255,0.8)",
-        "0px 0px 4px rgba(255,255,255,0.5)",
+        "0px 0px 5px rgba(255,255,255,0.5)",
+        "0px 0px 15px rgba(255,255,255,0.8)",
+        "0px 0px 30px rgba(255,255,255,1)",
+        "0px 0px 15px rgba(255,255,255,0.8)",
+        "0px 0px 5px rgba(255,255,255,0.5)",
       ],
-      scale: [1, 1.05, 1],
     },
-    transition: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+    transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+  };
+
+  // 🎉 Extra bounce/flip on hover
+  const hoverCrazy = {
+    scale: [1, 1.2, 0.8, 1.1, 1],
+    rotate: [0, 15, -15, 10, -10, 0],
+    transition: { duration: 1 },
   };
 
   return (
@@ -54,54 +64,72 @@ const App = () => {
         transition: "background-color 1s ease",
       }}
     >
-      {/* MAIN HEADING */}
+      {/* 🎆 EXPLOSIVE HEADING */}
       <motion.h1
         className="heading"
         key={currentIndex + "-h1"}
-        variants={textVariants}
+        variants={crazyVariants}
         initial="initial"
         animate="animate"
-        whileHover={{ scale: 1.1, rotate: -3 }}
-        whileTap={{ scale: 0.95 }}
-        {...shimmerEffect}
+        whileHover={hoverCrazy}
+        whileTap={{ scale: 0.9, rotate: -5 }}
+        {...loopEffects}
+        style={{ fontSize: "3.5rem", letterSpacing: "2px" }}
       >
-        Color Palette Vault
+        🌈 Color Palette Vault 🌟
       </motion.h1>
 
-      {/* SUBTEXT WITH BIGGER FONT */}
+      {/* 🎇 BIGGER, BOUNCY SUBTEXT (NOW ALSO "Color Palette Vault") */}
       <motion.p
         key={currentIndex + "-p1"}
-        variants={textVariants}
+        variants={crazyVariants}
         initial="initial"
         animate="animate"
         transition={{ delay: 0.4 }}
-        whileHover={{ scale: 1.05, x: 5 }}
-        style={{ fontSize: "2.5rem", fontWeight: "bold", margin: "1rem 0" }}
+        whileHover={{
+          scale: 1.3,
+          rotate: [0, -10, 10, 0],
+          color: "#FFD700",
+          transition: { duration: 0.6 },
+        }}
+        style={{
+          fontSize: "3rem",
+          fontWeight: "900",
+          margin: "1rem 0",
+          textTransform: "uppercase",
+        }}
       >
-        Watch This Space
+        ⚡ Color Palette Vault ⚡
       </motion.p>
 
-      {/* INSTAGRAM LINK */}
+      {/* 🎭 INSTAGRAM LINK WITH ANIMATION */}
       <motion.p
         key={currentIndex + "-p2"}
-        variants={textVariants}
+        variants={crazyVariants}
         initial="initial"
         animate="animate"
         transition={{ delay: 0.8 }}
-        whileHover={{ rotate: 2, scale: 1.08 }}
+        whileHover={{
+          scale: 1.2,
+          rotate: [0, 5, -5, 0],
+          transition: { duration: 0.8 },
+        }}
+        style={{ fontSize: "1.5rem", marginTop: "1rem" }}
       >
-        Follow on instagram{" "}
+        🚀 Follow on Instagram{" "}
         <motion.a
           href="https://www.instagram.com/colorpalettevault/"
           target="_blank"
           rel="noreferrer"
           whileHover={{
+            scale: 1.5,
+            rotate: [0, 8, -8, 0],
             color: "#FFD700",
-            scale: 1.2,
-            textShadow: "0px 0px 8px rgba(255, 215, 0, 1)",
+            textShadow: "0px 0px 12px rgba(255, 215, 0, 1)",
+            transition: { duration: 0.6 },
           }}
         >
-          Click Here
+          ✨ Click Here ✨
         </motion.a>
       </motion.p>
     </div>
