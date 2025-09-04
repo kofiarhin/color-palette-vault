@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion as Motion, AnimatePresence } from "framer-motion";
 import { colors } from "./data/colors";
 import "./app.styles.scss";
 
@@ -14,7 +14,7 @@ const App = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [colors.length]);
+  }, []);
 
   const textVariants = {
     initial: { opacity: 0, scale: 0.8, y: 50 },
@@ -33,7 +33,7 @@ const App = () => {
   };
 
   return (
-    <motion.div
+    <Motion.div
       id="app"
       style={{
         minHeight: "100vh",
@@ -49,7 +49,7 @@ const App = () => {
       transition={{ duration: 1 }}
     >
       <AnimatePresence mode="wait">
-        <motion.div
+        <Motion.div
           key={currentIndex}
           initial="initial"
           animate="animate"
@@ -58,7 +58,7 @@ const App = () => {
           style={{ color: "#fff", width: "100%", maxWidth: "900px" }}
         >
           {/* 🎆 SINGLE HEADLINE */}
-          <motion.h1
+          <Motion.h1
             className="heading"
             style={{
               fontSize: "clamp(2rem, 5vw, 4rem)", // responsive font scaling
@@ -70,10 +70,10 @@ const App = () => {
             }}
           >
             Color Palette Vault
-          </motion.h1>
+          </Motion.h1>
 
           {/* 🎭 INSTAGRAM LINK */}
-          <motion.p
+          <Motion.p
             style={{
               fontSize: "clamp(1rem, 2.5vw, 1.5rem)",
               marginTop: "1rem",
@@ -81,7 +81,7 @@ const App = () => {
             }}
           >
             Follow on Instagram{" "}
-            <motion.a
+            <Motion.a
               href="https://www.instagram.com/colorpalettevault/"
               target="_blank"
               rel="noreferrer"
@@ -94,11 +94,11 @@ const App = () => {
               style={{ display: "inline-block", marginLeft: "0.25rem" }}
             >
               Click Here
-            </motion.a>
-          </motion.p>
-        </motion.div>
+            </Motion.a>
+          </Motion.p>
+        </Motion.div>
       </AnimatePresence>
-    </motion.div>
+    </Motion.div>
   );
 };
 
