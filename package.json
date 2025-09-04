@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "npm run dev --prefix client"
+    "dev": "concurrently \"npm:server\" \"npm:client\"",
+    "server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "test": "concurrently \"npm --prefix server test\" \"npm --prefix client test\""
   },
   "repository": {
     "type": "git",
@@ -17,5 +19,8 @@
     "url": "https://github.com/kofiarhin/color-palette-vault/issues"
   },
   "homepage": "https://github.com/kofiarhin/color-palette-vault#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
 }
