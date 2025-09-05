@@ -10,6 +10,9 @@
   .brand {
     font-weight: 700;
     color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .burger {
@@ -17,15 +20,8 @@
     border: none;
     cursor: pointer;
     display: none;
-    flex-direction: column;
-    gap: 4px;
-
-    span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: white;
-    }
+    color: #fff;
+    font-size: 1.5rem;
   }
 
   .nav-links {
@@ -35,6 +31,9 @@
 
     li a {
       color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       &.active {
         text-decoration: underline;
       }
