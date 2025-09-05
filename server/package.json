@@ -1,11 +1,11 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js",
-    "test": "jest"
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test": "jest --watchAll"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
