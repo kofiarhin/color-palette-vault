@@ -1,12 +1,14 @@
-import { useAuth } from '../context/AuthContext.jsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../store/authSlice';
 
 const Dashboard = () => {
-  const { user, logout } = useAuth();
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
   return (
     <section style={{ padding: '2rem', textAlign: 'center' }}>
       <h1>Dashboard</h1>
       <p>Welcome {user?.name}</p>
-      <button onClick={logout}>Logout</button>
+      <button onClick={() => dispatch(logout())}>Logout</button>
     </section>
   );
 };

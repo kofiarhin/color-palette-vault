@@ -3,7 +3,9 @@ import userEvent from '@testing-library/user-event';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from '../context/AuthContext.jsx';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import authReducer, { fetchMe } from '../store/authSlice';
 import Login from '../pages/Login.jsx';
 import Dashboard from '../pages/Dashboard.jsx';
 import PrivateRoute from '../components/PrivateRoute.jsx';
@@ -19,27 +21,33 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
+const makeStore = () => configureStore({ reducer: { auth: authReducer } });
+
 test('renders login form', () => {
+  const store = makeStore();
+  store.dispatch(fetchMe());
   render(
-    <AuthProvider>
+    <Provider store={store}>
       <MemoryRouter initialEntries={['/login']}>
         <Login />
       </MemoryRouter>
-    </AuthProvider>
+    </Provider>
   );
   expect(screen.getByPlaceholderText(/email/i)).toBeInTheDocument();
 });
 
 test('successful login flow', async () => {
+  const store = makeStore();
+  store.dispatch(fetchMe());
   render(
-    <AuthProvider>
+    <Provider store={store}>
       <MemoryRouter initialEntries={['/login']}>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
         </Routes>
       </MemoryRouter>
-    </AuthProvider>
+    </Provider>
   );
   await userEvent.type(screen.getByPlaceholderText(/email/i), 'test@example.com');
   await userEvent.type(screen.getByPlaceholderText(/password/i), 'password123');
@@ -51,12 +59,14 @@ test('displays error on failed login', async () => {
   server.use(
     rest.post('/api/auth/login', (_req, res, ctx) => res(ctx.status(400), ctx.json({ message: 'Invalid credentials' })))
   );
+  const store = makeStore();
+  store.dispatch(fetchMe());
   render(
-    <AuthProvider>
+    <Provider store={store}>
       <MemoryRouter initialEntries={['/login']}>
         <Login />
       </MemoryRouter>
-    </AuthProvider>
+    </Provider>
   );
   await userEvent.type(screen.getByPlaceholderText(/email/i), 'test@example.com');
   await userEvent.type(screen.getByPlaceholderText(/password/i), 'wrongpass');
@@ -65,15 +75,17 @@ test('displays error on failed login', async () => {
 });
 
 test('PrivateRoute blocks unauthenticated user', async () => {
+  const store = makeStore();
+  store.dispatch(fetchMe());
   render(
-    <AuthProvider>
+    <Provider store={store}>
       <MemoryRouter initialEntries={['/dashboard']}>
         <Routes>
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
           <Route path="/login" element={<div>Login Page</div>} />
         </Routes>
       </MemoryRouter>
-    </AuthProvider>
+    </Provider>
   );
   await waitFor(() => expect(screen.getByText('Login Page')).toBeInTheDocument());
 });

@@ -1,30 +1,32 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext.jsx';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { register as registerThunk } from "../store/authSlice";
 
 const Register = () => {
-  const { register } = useAuth();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [form, setForm] = useState({ name: '', email: '', password: '' });
+  const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [error, setError] = useState(null);
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
     try {
-      await register(form);
-      navigate('/dashboard');
+      await dispatch(registerThunk(form)).unwrap();
+      navigate("/dashboard");
     } catch (err) {
-      setError(err.response?.data?.message || 'Registration failed');
+      setError(err || "Registration failed");
     }
   };
 
   return (
-    <section style={{ padding: '2rem', textAlign: 'center' }}>
+    <section>
       <h1>Register</h1>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center' }}>
+      <form onSubmit={handleSubmit}>
         <input
           placeholder="Name"
           name="name"
