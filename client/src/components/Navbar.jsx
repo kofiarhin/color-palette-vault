@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { FaBars, FaTimes, FaHome, FaInfoCircle, FaSignInAlt, FaUserPlus, FaPalette } from "react-icons/fa";
+import {
+  FaBars,
+  FaTimes,
+  FaHome,
+  FaInfoCircle,
+  FaSignInAlt,
+  FaUserPlus,
+  FaPalette,
+} from "react-icons/fa";
+import { GiPaintBrush } from "react-icons/gi";
 import "./navbar.styles.scss";
 
 const Navbar = () => {
@@ -17,7 +26,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <Link to="/" className="brand">
-        <span className="icon" aria-hidden="true"><FaPalette /></span>
+        <span className="icon" aria-hidden="true">
+          <FaPalette />
+        </span>
         <span className="brand-text">Color Palette Vault</span>
       </Link>
       <button
@@ -36,8 +47,23 @@ const Navbar = () => {
             onClick={handleLinkClick}
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            <span className="icon" aria-hidden="true"><FaHome /></span>
+            <span className="icon" aria-hidden="true">
+              <FaHome />
+            </span>
             Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/palettes"
+            end
+            onClick={handleLinkClick}
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            <span className="icon" aria-hidden="true">
+              <GiPaintBrush />
+            </span>
+            Palettes
           </NavLink>
         </li>
         <li>
@@ -46,7 +72,9 @@ const Navbar = () => {
             onClick={handleLinkClick}
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            <span className="icon" aria-hidden="true"><FaInfoCircle /></span>
+            <span className="icon" aria-hidden="true">
+              <FaInfoCircle />
+            </span>
             About
           </NavLink>
         </li>
@@ -56,7 +84,9 @@ const Navbar = () => {
             onClick={handleLinkClick}
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            <span className="icon" aria-hidden="true"><FaSignInAlt /></span>
+            <span className="icon" aria-hidden="true">
+              <FaSignInAlt />
+            </span>
             Login
           </NavLink>
         </li>
@@ -66,7 +96,9 @@ const Navbar = () => {
             onClick={handleLinkClick}
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            <span className="icon" aria-hidden="true"><FaUserPlus /></span>
+            <span className="icon" aria-hidden="true">
+              <FaUserPlus />
+            </span>
             Register
           </NavLink>
         </li>

@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "title": "Sunset Glow",
+    "theme": "Warm Evening",
+    "description": "A palette inspired by the colors of a summer sunset.",
+    "tags": ["warm", "sunset", "evening"],
+    "usageTips": "Perfect for creating inviting and vibrant designs.",
+    "colors": ["#FF6F61", "#FF8C42", "#FFD166", "#FFCAD4"],
+    "popularity": 85
+  },
+  {
+    "id": 2,
+    "title": "Ocean Breeze",
+    "theme": "Coastal Calm",
+    "description": "Soft blues and greens reminiscent of a serene coastline.",
+    "tags": ["cool", "ocean", "coastal"],
+    "usageTips": "Great for creating calming and refreshing visuals.",
+    "colors": ["#A8DADC", "#457B9D", "#1D3557", "#F1FAEE"],
+    "popularity": 72
+  },
+  {
+    "id": 3,
+    "title": "Forest Hike",
+    "theme": "Nature Greens",
+    "description": "Earthy greens that capture the essence of a walk through the woods.",
+    "tags": ["nature", "forest", "green"],
+    "usageTips": "Ideal for nature-themed projects and organic designs.",
+    "colors": ["#2E8B57", "#3CB371", "#8FBC8F", "#CFFFB0"],
+    "popularity": 65
+  },
+  {
+    "id": 4,
+    "title": "Midnight Sky",
+    "theme": "Dark Tones",
+    "description": "Deep shades of blue and black reflecting a night sky.",
+    "tags": ["dark", "night", "blue"],
+    "usageTips": "Perfect for moody or futuristic interfaces.",
+    "colors": ["#0D1B2A", "#1B263B", "#415A77", "#778DA9"],
+    "popularity": 90
+  },
+  {
+    "id": 5,
+    "title": "Autumn Leaves",
+    "theme": "Fall Warmth",
+    "description": "Colors inspired by fallen autumn leaves.",
+    "tags": ["autumn", "fall", "warm"],
+    "usageTips": "Great for seasonal branding and rustic designs.",
+    "colors": ["#D2691E", "#FF7F50", "#FFD700", "#8B4513"],
+    "popularity": 77
+  },
+  {
+    "id": 6,
+    "title": "Tropical Vibes",
+    "theme": "Island Bright",
+    "description": "Vibrant colors inspired by tropical beaches.",
+    "tags": ["bright", "tropical", "summer"],
+    "usageTips": "Use for playful, energetic content.",
+    "colors": ["#FF6347", "#FFD700", "#40E0D0", "#00FA9A"],
+    "popularity": 88
+  },
+  {
+    "id": 7,
+    "title": "Lavender Dreams",
+    "theme": "Soft Pastel",
+    "description": "Gentle pastels with lavender tones.",
+    "tags": ["pastel", "soft", "romantic"],
+    "usageTips": "Perfect for beauty and lifestyle projects.",
+    "colors": ["#E6E6FA", "#D8BFD8", "#BA55D3", "#9370DB"],
+    "popularity": 70
+  },
+  {
+    "id": 8,
+    "title": "Fire & Flame",
+    "theme": "Intense Heat",
+    "description": "Fiery reds and oranges for powerful designs.",
+    "tags": ["fire", "energy", "bold"],
+    "usageTips": "Ideal for attention-grabbing CTAs.",
+    "colors": ["#B22222", "#DC143C", "#FF4500", "#FF6347"],
+    "popularity": 82
+  },
+  {
+    "id": 9,
+    "title": "Ice & Snow",
+    "theme": "Winter Chill",
+    "description": "Cool tones inspired by ice and snowy landscapes.",
+    "tags": ["winter", "cold", "icy"],
+    "usageTips": "Use for winter campaigns or tech products.",
+    "colors": ["#E0F7FA", "#80DEEA", "#26C6DA", "#006064"],
+    "popularity": 68
+  },
+  {
+    "id": 10,
+    "title": "Desert Sand",
+    "theme": "Earth Tones",
+    "description": "Warm earthy tones inspired by desert landscapes.",
+    "tags": ["earth", "desert", "natural"],
+    "usageTips": "Great for organic, grounded visuals.",
+    "colors": ["#EDC9AF", "#C2B280", "#A67B5B", "#6B4226"],
+    "popularity": 60
+  },
+  {
+    "id": 11,
+    "title": "Rose Garden",
+    "theme": "Floral Romance",
+    "description": "Soft pinks and reds inspired by roses.",
+    "tags": ["romantic", "floral", "soft"],
+    "usageTips": "Perfect for weddings and lifestyle brands.",
+    "colors": ["#FFC0CB", "#FF69B4", "#DB7093", "#C71585"],
+    "popularity": 75
+  },
+  {
+    "id": 12,
+    "title": "Tech Neon",
+    "theme": "Futuristic Glow",
+    "description": "Neon colors for futuristic and edgy aesthetics.",
+    "tags": ["neon", "futuristic", "tech"],
+    "usageTips": "Best for cyberpunk or nightlife themes.",
+    "colors": ["#39FF14", "#00FFFF", "#FF00FF", "#FFD700"],
+    "popularity": 95
+  },
+  {
+    "id": 13,
+    "title": "Earth & Moss",
+    "theme": "Natural Calm",
+    "description": "A mix of earth and moss greens for natural vibes.",
+    "tags": ["earth", "green", "calm"],
+    "usageTips": "Good for eco-friendly projects.",
+    "colors": ["#4B5320", "#556B2F", "#6B8E23", "#8FBC8F"],
+    "popularity": 58
+  },
+  {
+    "id": 14,
+    "title": "Royal Jewel",
+    "theme": "Luxury Rich",
+    "description": "Jewel tones with a luxurious feel.",
+    "tags": ["luxury", "royal", "rich"],
+    "usageTips": "Use for premium products and branding.",
+    "colors": ["#800080", "#4B0082", "#000080", "#DAA520"],
+    "popularity": 91
+  },
+  {
+    "id": 15,
+    "title": "Candy Pop",
+    "theme": "Playful Pastel",
+    "description": "Bright candy-inspired pastels.",
+    "tags": ["fun", "playful", "pastel"],
+    "usageTips": "Perfect for kids or playful brands.",
+    "colors": ["#FFB6C1", "#FFD700", "#ADFF2F", "#87CEFA"],
+    "popularity": 83
+  },
+  {
+    "id": 16,
+    "title": "Coffee Break",
+    "theme": "Warm Neutral",
+    "description": "Neutral browns and creams for cozy vibes.",
+    "tags": ["coffee", "neutral", "warm"],
+    "usageTips": "Great for cafes and lifestyle designs.",
+    "colors": ["#6F4E37", "#A0522D", "#D2B48C", "#F5F5DC"],
+    "popularity": 74
+  },
+  {
+    "id": 17,
+    "title": "Galaxy Night",
+    "theme": "Cosmic Colors",
+    "description": "Bright galaxy-inspired tones.",
+    "tags": ["galaxy", "space", "cosmic"],
+    "usageTips": "Ideal for fantasy or tech projects.",
+    "colors": ["#483D8B", "#6A5ACD", "#8A2BE2", "#DA70D6"],
+    "popularity": 89
+  },
+  {
+    "id": 18,
+    "title": "Minimal Grey",
+    "theme": "Monochrome Calm",
+    "description": "Shades of grey for minimalistic designs.",
+    "tags": ["grey", "minimal", "calm"],
+    "usageTips": "Great for professional and modern interfaces.",
+    "colors": ["#F5F5F5", "#BDBDBD", "#757575", "#212121"],
+    "popularity": 64
+  },
+  {
+    "id": 19,
+    "title": "Spring Bloom",
+    "theme": "Fresh Pastel",
+    "description": "Fresh spring pastels inspired by blossoms.",
+    "tags": ["spring", "fresh", "pastel"],
+    "usageTips": "Perfect for cheerful seasonal content.",
+    "colors": ["#98FB98", "#FFB6C1", "#E6E6FA", "#FFDAB9"],
+    "popularity": 67
+  },
+  {
+    "id": 20,
+    "title": "Deep Ocean",
+    "theme": "Marine Depth",
+    "description": "Dark blues and teals inspired by deep seas.",
+    "tags": ["ocean", "marine", "deep"],
+    "usageTips": "Best for professional or calming projects.",
+    "colors": ["#001F3F", "#003366", "#004080", "#006666"],
+    "popularity": 80
+  }
+]
