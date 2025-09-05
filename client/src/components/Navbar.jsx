@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./navbar.styles.scss";
 
 const Navbar = () => {
@@ -15,7 +15,9 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="brand">Color Palette Vault</div>
+      <Link to="/" className="brand">
+        Color Palette Vault
+      </Link>
       <button
         className="burger"
         aria-label="Toggle navigation"
@@ -70,4 +72,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
