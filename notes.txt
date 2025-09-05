@@ -1,0 +1,16 @@
+Generate a JSON dataset of color palettes. Each palette should have the following fields:
+
+- id: an incremental integer
+- title: short creative name (e.g., "Sunset Glow", "Ocean Breeze")
+- theme: 2–3 word theme (e.g., "Warm Evening", "Coastal Calm")
+- description: 1–2 sentence description of the palette
+- tags: 3 descriptive lowercase keywords
+- usageTips: 1 sentence practical usage suggestion
+- colors: array of 4 hex color codes
+- popularity: integer from 50–100
+
+Rules:
+- Create [N] unique palettes (replace [N] with the number you want).
+- Mix warm, cool, neutral, pastel, dark, and vibrant themes.
+- Ensure `colors` are visually coherent with the theme.
+- Output only valid JSON (no explanations or extra text).
