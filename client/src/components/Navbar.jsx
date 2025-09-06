@@ -11,6 +11,7 @@ import {
   FaPalette,
 } from "react-icons/fa";
 import { GiPaintBrush } from "react-icons/gi";
+import { BsPaletteFill } from "react-icons/bs";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -61,7 +62,7 @@ const Navbar = () => {
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             <span className="icon" aria-hidden="true">
-              <GiPaintBrush />
+              <BsPaletteFill />
             </span>
             Palettes
           </NavLink>
