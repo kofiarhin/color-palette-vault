@@ -6,7 +6,8 @@ const App = () => {
     const getUsers = async () => {
       console.log(BASE_URL);
       const res = await fetch(BASE_URL);
-      console.log(res.ok);
+      const data = await res.json();
+      console.log({ data });
     };
     getUsers();
   }, []);
