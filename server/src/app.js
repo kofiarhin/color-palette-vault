@@ -5,10 +5,7 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: [
-      "http://localhost:4000",
-      "https://color-palette-vault.vercel.app/",
-    ],
+    origin: ["http://localhost:4000", "https://color-palette-vault.vercel.app"],
     methods: ["GET", "PUT", "POST", "DELETE"],
   })
 );
