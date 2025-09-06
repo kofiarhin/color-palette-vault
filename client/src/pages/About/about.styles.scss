@@ -1,0 +1,11 @@
+#about {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+@media (min-width: 600px) {
+  .text-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}

@@ -26,6 +26,14 @@ body {
 
 .container {
   width: 1200px;
-  max-width: 98%;
+  max-width: 96%;
   margin: 0 auto;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  &.center {
+    text-align: center;
+  }
 }
