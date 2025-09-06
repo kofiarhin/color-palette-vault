@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { BASE_URL } from "./constants/constants";
+import "./app.styles.scss";
 
 const App = () => {
   useEffect(() => {
@@ -12,8 +13,9 @@ const App = () => {
     getUsers();
   }, []);
   return (
-    <div>
-      <h1>Hello World Update </h1>
+    <div id="app">
+      <h1> Color Palette Vault </h1>
+      <p>Watch this space!</p>
     </div>
   );
 };
