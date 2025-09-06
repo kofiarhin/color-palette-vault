@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { colors } from "../data/colors";
 import { Link } from "react-router-dom";
 import "../app.styles.scss";
+import { BASE_URL } from "../constants/constants";
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -11,6 +12,16 @@ const Home = () => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % colors.length);
     }, 3000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const getUser = async () => {
+      const res = await fetch(BASE_URL);
+      const data = await res.json();
+      console.log({ data });
+    };
+
+    getUser();
   }, []);
 
   return (
