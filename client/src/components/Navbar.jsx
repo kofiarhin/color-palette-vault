@@ -1,3 +1,4 @@
+import "./navbar.styles.scss";
 import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import {
@@ -10,7 +11,6 @@ import {
   FaPalette,
 } from "react-icons/fa";
 import { GiPaintBrush } from "react-icons/gi";
-import "./navbar.styles.scss";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);

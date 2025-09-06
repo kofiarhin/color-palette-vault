@@ -1,31 +1,39 @@
 import "./colorPalette.styles.scss";
 import colorData from "./colorData.json";
-
-const ColorPalette = () => {
+import { FaHeart } from "react-icons/fa";
+const ColorPalette = ({ colors = colorData }) => {
   console.log({ colorData });
   return (
     <div className="palette-wrapper">
-      {colorData.map((item) => {
+      {colors?.map((item, index) => {
         return (
-          <div key={item.id} className="palette-unit">
-            {" "}
-            {item.colors.map((i, index) => {
-              return (
-                <div
-                  className="palette-item"
-                  key={index}
-                  style={{ backgroundColor: i }}
-                >
-                  {" "}
-                </div>
-              );
-            })}{" "}
-            <h3> {item.title} </h3>
+          <div key={index} className="palette-unit">
+            <div className="colors-wrapper">
+              {item.colors?.map((color, index) => {
+                return (
+                  <div
+                    className="color-item"
+                    key={index}
+                    style={{ backgroundColor: color }}
+                  >
+                    {" "}
+                  </div>
+                  // end color-item
+                );
+              })}
+            </div>
+            {/* end colors-wraper */}
+
+            <div className="text-wrapper">
+              <span> {item.title} </span>
+              <FaHeart className="icon" />
+            </div>
           </div>
         );
       })}
     </div>
   );
+  // end color-palette-wrapper
 };
 
 export default ColorPalette;
