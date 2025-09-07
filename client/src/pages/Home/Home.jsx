@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { colors } from "../data/colors";
+import { colors } from "../../data/colors";
 import { Link } from "react-router-dom";
 import "../app.styles.scss";
-import { BASE_URL } from "../constants/constants";
+import { BASE_URL } from "../../constants/constants";
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

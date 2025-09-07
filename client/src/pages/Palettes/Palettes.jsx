@@ -1,4 +1,5 @@
 import ColorPalette from "../../components/ColorPalette/ColorPalette";
+import { useEffect } from "react";
 
 const Palettes = () => {
   return (
