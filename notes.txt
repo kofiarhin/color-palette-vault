@@ -14,3 +14,9 @@ Rules:
 - Mix warm, cool, neutral, pastel, dark, and vibrant themes.
 - Ensure `colors` are visually coherent with the theme.
 - Output only valid JSON (no explanations or extra text).
+
+
+//ai generator prompt
+{
+  "prompt": "Generate a JSON array of 20 unique color palette datasets. Each dataset should follow this exact structure:\n\n{\n  \"id\": 1,\n  \"title\": \"Crimson Dawn\",\n  \"theme\": \"Bold Sunrise\",\n  \"description\": \"Deep scarlet and glowing amber paired with muted sand for a striking morning energy.\",\n  \"tags\": [\"warm\", \"bold\", \"sunrise\"],\n  \"usageTips\": \"Use scarlet sparingly for accents while keeping sand as the primary background.\",\n  \"colors\": [\"#8C1C13\", \"#E85D04\", \"#FFB703\", \"#F1E3C1\"],\n  \"popularity\": 91\n}\n\nRules:\n- id: sequential number (1–20).\n- title: short, creative 2–3 word name for the palette.\n- theme: concise descriptive category (e.g., “Bold Sunrise”, “Dark Luxury”).\n- description: 1–2 sentences describing the mood and usage of the palette.\n- tags: 3 keywords in lowercase (e.g., [\"warm\", \"bold\", \"sunrise\"]).\n- usageTips: 1 practical design tip for using the palette.\n- colors: exactly 4 hex codes in an array. Use harmonious but varied schemes.\n- popularity: integer from 78–98 (realistic range, varied across sets).\n\nOutput:\nReturn only the raw JSON array with 20 objects. Do not include explanations or extra text outside the JSON."
+}

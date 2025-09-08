@@ -54,7 +54,7 @@ const Navbar = () => {
             Home
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink
             to="/palettes"
             end
@@ -66,7 +66,7 @@ const Navbar = () => {
             </span>
             Palettes
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink
             to="/about"
@@ -79,7 +79,7 @@ const Navbar = () => {
             About
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink
             to="/login"
             onClick={handleLinkClick}
@@ -90,8 +90,8 @@ const Navbar = () => {
             </span>
             Login
           </NavLink>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <NavLink
             to="/register"
             onClick={handleLinkClick}
@@ -102,7 +102,7 @@ const Navbar = () => {
             </span>
             Register
           </NavLink>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
